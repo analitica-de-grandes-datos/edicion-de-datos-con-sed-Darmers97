@@ -48,8 +48,9 @@ sed 's/a/A/g' data2.csv > data1.csv
 sed 's/b/B/g' data1.csv > data2.csv
 sed 's/c/C/g' data2.csv > data1.csv
 sed 's/n/N/g' data1.csv > data2.csv
-sed 's/,N/,\\N/g' data1.csv > data2.csv
-sed 's/,,/,\\N,/g' data2.csv > data1.csv
+sed 's/,N/,\\N/g' data2.csv > data1.csv
+sed 's/,,/,\\N,\\N/g' data1.csv > data2.csv
+sed 's/\\N\\N/\\N/g' data2.csv > data1.csv
 sed 's/^\([0-9]\)\//0\1\//g' data1.csv > data2.csv
 sed 's/\/\([0-9]\)\//\/0\1\//g' data2.csv > data1.csv
 sed 's/\/\([0-9][0-9]\),/\/20\1,/g' data1.csv > data2.csv
